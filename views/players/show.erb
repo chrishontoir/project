@@ -14,15 +14,12 @@
 <p>Games:</p>
 <ul>
 <% for game in @player.games %>
-<% if @player.id == game.status %>
-  <li><a href="/games/<%=game.id%>"><%=game.date%></a> | WIN</li>
+<% if @player.id == game.status.to_i %>
+  <li><a href="/games/<%=game.id%>"><%=game.date%></a> | Win</li>
 <% else %>
-  <li><a href="/games/<%=game.id%>"><%=game.date%></a> | LOSS</li>
+  <li><a href="/games/<%=game.id%>"><%=game.date%></a> | Loss</li>
 <% end %>
 <% end %>
 </ul>
-
-
-<p>Games: <%=@player.games%></p>
 
 <p><a href="/players">Back</a></p>

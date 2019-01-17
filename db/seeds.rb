@@ -82,7 +82,7 @@ d = DateTime.now
 datetime = d.strftime("%d/%m/%Y %H:%M")
 
 game1 = Game.new({
-  "date" => datetime,
+  "date" => "10/01/2019 10:54",
   "player1_id" => player1.id,
   "player1_health" => 30,
   "player1_power" => 1,
@@ -95,10 +95,45 @@ game1 = Game.new({
   "player2_deck" => 2,
   "player2_hand" => "[]",
   "player2_played" => "[]",
-  "status" => "1"
+  "status" => player1.id
 })
-
 game1.save()
+
+game2 = Game.new({
+  "date" => "14/01/2019 16:32",
+  "player1_id" => player2.id,
+  "player1_health" => 30,
+  "player1_power" => 1,
+  "player1_deck" => 2,
+  "player1_hand" => "[]",
+  "player1_played" => "[]",
+  "player2_id" => player1.id,
+  "player2_health" => 30,
+  "player2_power" => 1,
+  "player2_deck" => 2,
+  "player2_hand" => "[]",
+  "player2_played" => "[]",
+  "status" => player2.id
+})
+game2.save()
+
+game3 = Game.new({
+  "date" => datetime,
+  "player1_id" => player3.id,
+  "player1_health" => 30,
+  "player1_power" => 1,
+  "player1_deck" => 2,
+  "player1_hand" => "[]",
+  "player1_played" => "[]",
+  "player2_id" => player2.id,
+  "player2_health" => 30,
+  "player2_power" => 1,
+  "player2_deck" => 2,
+  "player2_hand" => "[]",
+  "player2_played" => "[]",
+  "status" => player2.id
+})
+game3.save()
 
 binding.pry
 nil
