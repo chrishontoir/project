@@ -1,4 +1,4 @@
-<h1>Player Details</h1>
+<h1>VIEW PROFILE</h1>
 
 <p>Name: <%=@player.name%></p>
 <p>Decks:</p>
@@ -9,6 +9,20 @@
 </ul>
 
 
+<p><a href="/decks/new/<%=@player.id%>">New Deck</a></p>
+
+<p>Games:</p>
+<ul>
+<% for game in @player.games %>
+<% if @player.id == game.status %>
+  <li><a href="/games/<%=game.id%>"><%=game.date%></a> | WIN</li>
+<% else %>
+  <li><a href="/games/<%=game.id%>"><%=game.date%></a> | LOSS</li>
+<% end %>
+<% end %>
+</ul>
 
 
 <p>Games: <%=@player.games%></p>
+
+<p><a href="/players">Back</a></p>

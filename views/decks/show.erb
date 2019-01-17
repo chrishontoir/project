@@ -1,4 +1,18 @@
-<h1>Deck Details</h1>
+<h1>VIEW DECK</h1>
 
 <p>Name: <%=@deck.name%></p>
-<p>Cards: <%=@deck.card_array%></p>
+<p>Cards: </p>
+<ul>
+  <li><a href="/cards/<%=@deck.card_1%>"><%=@deck.card_name(@deck.card_1)%></a></li>
+  <li><a href="/cards/<%=@deck.card_2%>"><%=@deck.card_name(@deck.card_2)%></a></li>
+  <li><a href="/cards/<%=@deck.card_3%>"><%=@deck.card_name(@deck.card_3)%></a></li>
+  <li><a href="/cards/<%=@deck.card_4%>"><%=@deck.card_name(@deck.card_4)%></a></li>
+  <li><a href="/cards/<%=@deck.card_5%>"><%=@deck.card_name(@deck.card_5)%></a></li>
+  <li><a href="/cards/<%=@deck.card_6%>"><%=@deck.card_name(@deck.card_6)%></a></li>
+  <li><a href="/cards/<%=@deck.card_7%>"><%=@deck.card_name(@deck.card_7)%></a></li>
+  <li><a href="/cards/<%=@deck.card_8%>"><%=@deck.card_name(@deck.card_8)%></a></li>
+  <li><a href="/cards/<%=@deck.card_9%>"><%=@deck.card_name(@deck.card_9)%></a></li>
+  <li><a href="/cards/<%=@deck.card_10%>"><%=@deck.card_name(@deck.card_10)%></a></li>
+</ul>
+
+<p><a href="/players/<%=@deck.player_id%>">Back</a></p>

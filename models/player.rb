@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('../models/game.rb')
 
 class Player
 
@@ -37,6 +38,13 @@ class Player
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map { |deck| Deck.new(deck) }
+  end
+
+  def games
+    sql = "SELECT * FROM games WHERE games.player1_id = $1 OR games.player2_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |game| Game.new(game)}
   end
 
 

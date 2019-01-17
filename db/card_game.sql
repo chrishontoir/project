@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS games;
 DROP TABLE IF EXISTS decks;
 DROP TABLE IF EXISTS cards;
 DROP TABLE IF EXISTS players;
@@ -33,4 +34,22 @@ CREATE TABLE decks (
   card_8 INT4 REFERENCES cards(id),
   card_9 INT4 REFERENCES cards(id),
   card_10 INT4 REFERENCES cards(id)
+);
+
+CREATE TABLE games (
+  id SERIAL8 PRIMARY KEY,
+  date VARCHAR(255),
+  player1_id INT4 REFERENCES players(id),
+  player1_health INT4,
+  player1_power INT4,
+  player1_deck INT4 REFERENCES decks(id),
+  player1_hand VARCHAR(255),
+  player1_played VARCHAR(255),
+  player2_id INT4 REFERENCES players(id),
+  player2_health INT4,
+  player2_power INT4,
+  player2_deck INT4 REFERENCES decks(id),
+  player2_hand VARCHAR(255),
+  player2_played VARCHAR(255),
+  status VARCHAR(255)
 );

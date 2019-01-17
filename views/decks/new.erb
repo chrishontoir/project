@@ -1,0 +1,103 @@
+<h1>CREATE DECK</h1>
+
+<form action="/players/<%=@player.id%>" method="post">
+  <label for="deck-name">Name: </label>
+  <input type="text" id="deck-name" name="name" value="" autofocus="autofocus">
+
+  <input type="hidden" id="player-id" name="player_id" value="<%=@player.id%>">
+
+  <p>Card 1:
+    <br>
+  <% for card in @cards %>
+    <input type="radio" id="card-1" name="card_1" value="<%=card.id%>">
+    <label for="card-1"><%=card.name%><span>Damage: <%=card.damage%>, Healing: <%=card.healing%>, Cost: <%=card.cost%></span></label>
+    <br>
+  <% end %>
+  </p>
+
+  <p>Card 2:
+    <br>
+  <% for card in @cards %>
+    <input type="radio" id="card-2" name="card_2" value="<%=card.id%>">
+    <label for="card-2"><%=card.name%><span>Damage: <%=card.damage%>, Healing: <%=card.healing%>, Cost: <%=card.cost%></span></label>
+    <br>
+  <% end %>
+  </p>
+
+  <p>Card 3:
+    <br>
+  <% for card in @cards %>
+    <input type="radio" id="card-3" name="card_3" value="<%=card.id%>">
+    <label for="card-3"><%=card.name%><span>Damage: <%=card.damage%>, Healing: <%=card.healing%>, Cost: <%=card.cost%></span></label>
+    <br>
+  <% end %>
+  </p>
+
+  <p>Card 4:
+    <br>
+  <% for card in @cards %>
+    <input type="radio" id="card-4" name="card_4" value="<%=card.id%>">
+    <label for="card-4"><%=card.name%><span>Damage: <%=card.damage%>, Healing: <%=card.healing%>, Cost: <%=card.cost%></span></label>
+    <br>
+  <% end %>
+  </p>
+
+  <p>Card 5:
+    <br>
+  <% for card in @cards %>
+    <input type="radio" id="card-5" name="card_5" value="<%=card.id%>">
+    <label for="card-5"><%=card.name%><span>Damage: <%=card.damage%>, Healing: <%=card.healing%>, Cost: <%=card.cost%></span></label>
+    <br>
+  <% end %>
+  </p>
+
+  <p>Card 6:
+    <br>
+  <% for card in @cards %>
+    <input type="radio" id="card-6" name="card_6" value="<%=card.id%>">
+    <label for="card-6"><%=card.name%><span>Damage: <%=card.damage%>, Healing: <%=card.healing%>, Cost: <%=card.cost%></span></label>
+    <br>
+  <% end %>
+  </p>
+
+  <p>Card 7:
+    <br>
+  <% for card in @cards %>
+    <input type="radio" id="card-7" name="card_7" value="<%=card.id%>">
+    <label for="card-7"><%=card.name%><span>Damage: <%=card.damage%>, Healing: <%=card.healing%>, Cost: <%=card.cost%></span></label>
+    <br>
+  <% end %>
+  </p>
+
+  <p>Card 8:
+    <br>
+  <% for card in @cards %>
+    <input type="radio" id="card-8" name="card_8" value="<%=card.id%>">
+    <label for="card-8"><%=card.name%><span>Damage: <%=card.damage%>, Healing: <%=card.healing%>, Cost: <%=card.cost%></span></label>
+    <br>
+  <% end %>
+  </p>
+
+  <p>Card 9:
+    <br>
+  <% for card in @cards %>
+    <input type="radio" id="card-9" name="card_9" value="<%=card.id%>">
+    <label for="card-9"><%=card.name%><span>Damage: <%=card.damage%>, Healing: <%=card.healing%>, Cost: <%=card.cost%></span></label>
+    <br>
+  <% end %>
+  </p>
+
+  <p>Card 10:
+    <br>
+  <% for card in @cards %>
+    <input type="radio" id="card-10" name="card_10" value="<%=card.id%>">
+    <label for="card-10"><%=card.name%><span>Damage: <%=card.damage%>, Healing: <%=card.healing%>, Cost: <%=card.cost%></span></label>
+    <br>
+  <% end %>
+  </p>
+
+
+
+
+  <input type="submit" name="" value="Create Deck">
+</form>
