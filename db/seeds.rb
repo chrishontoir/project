@@ -87,14 +87,14 @@ game1 = Game.new({
   "player1_health" => 30,
   "player1_power" => 1,
   "player1_deck" => 2,
-  "player1_hand" => "[]",
-  "player1_played" => "[]",
+  "player1_hand" => [],
+  "player1_played" => [],
   "player2_id" => player2.id,
   "player2_health" => 30,
   "player2_power" => 1,
   "player2_deck" => 2,
-  "player2_hand" => "[]",
-  "player2_played" => "[]",
+  "player2_hand" => [],
+  "player2_played" => [],
   "status" => player1.id
 })
 game1.save()
@@ -105,14 +105,14 @@ game2 = Game.new({
   "player1_health" => 30,
   "player1_power" => 1,
   "player1_deck" => 2,
-  "player1_hand" => "[]",
-  "player1_played" => "[]",
+  "player1_hand" => [],
+  "player1_played" => [],
   "player2_id" => player1.id,
   "player2_health" => 30,
   "player2_power" => 1,
   "player2_deck" => 2,
-  "player2_hand" => "[]",
-  "player2_played" => "[]",
+  "player2_hand" => [],
+  "player2_played" => [],
   "status" => player2.id
 })
 game2.save()
@@ -123,17 +123,21 @@ game3 = Game.new({
   "player1_health" => 30,
   "player1_power" => 1,
   "player1_deck" => 2,
-  "player1_hand" => "[]",
-  "player1_played" => "[]",
+  "player1_hand" => [],
+  "player1_played" => [],
   "player2_id" => player2.id,
   "player2_health" => 30,
   "player2_power" => 1,
   "player2_deck" => 2,
-  "player2_hand" => "[]",
-  "player2_played" => "[]",
+  "player2_hand" => [],
+  "player2_played" => [],
   "status" => player2.id
 })
 game3.save()
+
+game1.player1_add_card_to_hand(card1)
+game1.player1_add_card_to_hand(card2)
+game1.update()
 
 binding.pry
 nil

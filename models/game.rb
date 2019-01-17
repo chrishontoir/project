@@ -36,5 +36,18 @@ class Game
     @id = game['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE games SET (date, player1_id, player1_health, player1_power, player1_deck, player1_hand, player1_played, player2_id, player2_health, player2_power, player2_deck, player2_hand, player2_played, status) = ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) WHERE id = $15"
+    values = [@date, @player1_id, @player1_health, @player1_power, @player1_deck, @player1_hand, @player1_played, @player2_id, @player2_health, @player2_power, @player2_deck, @player2_hand, @player2_played, @status, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def player1_add_card_to_hand(card)
+    @player1_hand.push(card)
+  end
+
+  def player2_add_card_to_hand(card)
+    @player2_hand.push(card)
+  end
 
 end
