@@ -1,0 +1,14 @@
+<h1>Player Details</h1>
+
+<p>Name: <%=@player.name%></p>
+<p>Decks:</p>
+<ul>
+<% for deck in @player.decks %>
+<li><a href="/decks/<%=deck.id%>"><%=deck.name%></a></li>
+<% end %>
+</ul>
+
+
+
+
+<p>Games: <%=@player.games%></p>

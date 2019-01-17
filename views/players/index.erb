@@ -1,0 +1,9 @@
+<h1>List of all players</h1>
+
+<ul>
+  <% for player in @players %>
+    <li class=player-name><%=player.name%>
+    <br>
+    <a href="/players/<%=player.id%>">View Profile</a> | Delete Profile</li>
+  <% end %>
+</ul>
