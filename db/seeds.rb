@@ -78,6 +78,22 @@ deck2 = Deck.new({
 deck1.save()
 deck2.save()
 
+deck3 = Deck.new({
+  "name" => "Spear Focused Deck",
+  "player_id" => player3.id,
+  "card_1" => card2.id,
+  "card_2" => card2.id,
+  "card_3" => card2.id,
+  "card_4" => card2.id,
+  "card_5" => card2.id,
+  "card_6" => card1.id,
+  "card_7" => card1.id,
+  "card_8" => card1.id,
+  "card_9" => card1.id,
+  "card_10" => card1.id
+})
+deck3.save()
+
 d = DateTime.now
 datetime = d.strftime("%d/%m/%Y %H:%M")
 

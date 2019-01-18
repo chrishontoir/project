@@ -1,0 +1,38 @@
+<h1>NEW GAME</h1>
+
+<form action="/games" method="post">
+  <p>Player 1:
+    <br>
+  <% for player in @players %>
+    <input type="radio" id="player1-id" name="player1_id" value="<%=player.id%>">
+    <label for="player1-id"><%=player.name%></label>
+    <br>
+  <% end %>
+  </p>
+
+  <p>Player 2:
+    <br>
+  <% for player in @players %>
+    <input type="radio" id="player2-id" name="player2_id" value="<%=player.id%>">
+    <label for="player2-id"><%=player.name%></label>
+    <br>
+  <% end %>
+  </p>
+
+  <input type="hidden" name="player1_health" value="30">
+  <input type="hidden" name="player1_power" value="1">
+  <input type="hidden" name="player1_deck" value="1">
+  <input type="hidden" name="player1_hand" value=[]>
+  <input type="hidden" name="player1_played" value=[]>
+
+  <input type="hidden" name="player2_health" value="30">
+  <input type="hidden" name="player2_power" value="1">
+  <input type="hidden" name="player2_deck" value="1">
+  <input type="hidden" name="player2_hand" value=[]>
+  <input type="hidden" name="player2_played" value=[]>
+
+  <input type="hidden" name="status" value="0">
+
+  <input type="hidden" name="date" value="">
+  <input type="submit" value="Start Game">
+</form>

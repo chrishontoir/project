@@ -49,5 +49,12 @@ class Deck
     return card['name']
   end
 
+  def convert_card1_to_id
+    sql = "SELECT cards.id FROM cards WHERE cards.name = $1"
+    values = [@card_1]
+    card_id = SqlRunner.run(sql, values).first
+    @card_1 = card_id
+  end
+
 
 end
