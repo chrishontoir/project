@@ -10,13 +10,21 @@
 <p>Deck: <%=@player1_deck.name%></p>
 <p>Health: <%=@game.player1_health%></p>
 <p>Power: <%=@game.player1_power%></p>
-<p>Hand: <%=@game.player1_hand%></p>
+<p>Hand: </p>
+<% for card in @player1_hand %>
+<input type="radio" id="p1-selected" name="p1_selected" value="<%=card.id%>">
+<label for="p1-selected"><%=card.name%></label>
+<% end %>
 
 <p>Player 2:</p>
 <p>Name: <%=@player2.name%></p>
 <p>Deck: <%=@player2_deck.name%></p>
 <p>Health: <%=@game.player2_health%></p>
 <p>Power: <%=@game.player2_power%></p>
-<p>Hand: <%=@game.player2_hand%></p>
+<p>Hand: </p>
+<% for card in @player2_hand %>
+<input type="radio" id="p2-selected" name="p2_selected" value="<%=card.id%>">
+<label for="p2-selected"><%=card.name%></label>
+<% end %>
 
 <p><a href="/">Quit</a></p>
