@@ -2,6 +2,7 @@ require_relative('../models/player.rb')
 require_relative('../models/deck.rb')
 require_relative('../models/card.rb')
 require_relative('../models/game.rb')
+require_relative('../models/card_deck.rb')
 require('pry')
 require('date')
 
@@ -47,52 +48,101 @@ card2.save()
 
 deck1 = Deck.new({
   "name" => "Default Deck",
-  "player_id" => player1.id,
-  "card_1" => card1.id,
-  "card_2" => card2.id,
-  "card_3" => card1.id,
-  "card_4" => card2.id,
-  "card_5" => card1.id,
-  "card_6" => card2.id,
-  "card_7" => card1.id,
-  "card_8" => card2.id,
-  "card_9" => card1.id,
-  "card_10" => card2.id
+  "player_id" => player1.id
 })
+deck1.save()
 
 deck2 = Deck.new({
   "name" => "Magic Focused Deck",
-  "player_id" => player1.id,
-  "card_1" => card2.id,
-  "card_2" => card2.id,
-  "card_3" => card2.id,
-  "card_4" => card2.id,
-  "card_5" => card2.id,
-  "card_6" => card2.id,
-  "card_7" => card2.id,
-  "card_8" => card2.id,
-  "card_9" => card2.id,
-  "card_10" => card2.id
+  "player_id" => player1.id
 })
-
-deck1.save()
 deck2.save()
 
 deck3 = Deck.new({
   "name" => "Spear Focused Deck",
-  "player_id" => player3.id,
-  "card_1" => card2.id,
-  "card_2" => card2.id,
-  "card_3" => card2.id,
-  "card_4" => card2.id,
-  "card_5" => card2.id,
-  "card_6" => card1.id,
-  "card_7" => card1.id,
-  "card_8" => card1.id,
-  "card_9" => card1.id,
-  "card_10" => card1.id
+  "player_id" => player3.id
 })
 deck3.save()
+
+card_deck1 = Card_Deck.new({
+  "card_id" => card1.id,
+  "deck_id" => deck1.id,
+  "in_hand" => 0,
+  "played" => 0
+})
+card_deck1.save()
+
+card_deck2 = Card_Deck.new({
+  "card_id" => card1.id,
+  "deck_id" => deck1.id,
+  "in_hand" => 1,
+  "played" => 0
+})
+card_deck2.save()
+
+card_deck3 = Card_Deck.new({
+  "card_id" => card1.id,
+  "deck_id" => deck1.id,
+  "in_hand" => 0,
+  "played" => 0
+})
+card_deck3.save()
+
+card_deck4 = Card_Deck.new({
+  "card_id" => card1.id,
+  "deck_id" => deck1.id,
+  "in_hand" => 1,
+  "played" => 0
+})
+card_deck4.save()
+
+card_deck5 = Card_Deck.new({
+  "card_id" => card1.id,
+  "deck_id" => deck1.id,
+  "in_hand" => 0,
+  "played" => 0
+})
+card_deck5.save()
+
+card_deck6 = Card_Deck.new({
+  "card_id" => card1.id,
+  "deck_id" => deck2.id,
+  "in_hand" => 0,
+  "played" => 0
+})
+card_deck6.save()
+
+card_deck7 = Card_Deck.new({
+  "card_id" => card1.id,
+  "deck_id" => deck2.id,
+  "in_hand" => 0,
+  "played" => 0
+})
+card_deck7.save()
+
+card_deck8 = Card_Deck.new({
+  "card_id" => card1.id,
+  "deck_id" => deck2.id,
+  "in_hand" => 0,
+  "played" => 0
+})
+card_deck8.save()
+
+card_deck9 = Card_Deck.new({
+  "card_id" => card1.id,
+  "deck_id" => deck3.id,
+  "in_hand" => 0,
+  "played" => 0
+})
+card_deck9.save()
+
+card_deck10 = Card_Deck.new({
+  "card_id" => card1.id,
+  "deck_id" => deck3.id,
+  "in_hand" => 0,
+  "played" => 0
+})
+card_deck10.save()
 
 d = DateTime.now
 datetime = d.strftime("%d/%m/%Y %H:%M")
@@ -150,10 +200,6 @@ game3 = Game.new({
   "status" => player2.id
 })
 game3.save()
-
-game1.player1_add_card_to_hand(card1)
-game1.player1_add_card_to_hand(card2)
-game1.update()
 
 binding.pry
 nil

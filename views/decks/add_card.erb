@@ -1,0 +1,19 @@
+<h1>Add Card to Deck</h1>
+
+<p>Deck: <%=@deck.name%></p>
+
+
+<form action="/decks/<%=@deck.id%>/add" method="post">
+<ul>
+  <% for card in @cards %>
+    <input type="radio" id="card-id" name="card_id" value="<%=card.id%>">
+    <label for="card-id"><%=card.name%></label>
+  <% end %>
+</ul>
+
+  <input type="hidden" id="deck-id" name="deck_id" value="<%=@deck.id%>">
+  <input type="hidden" id="in-hand" name="in_hand" value="0">
+  <input type="hidden" id="played" name="played" value="0">
+
+  <input type="submit" value="Add Card">
+</form>

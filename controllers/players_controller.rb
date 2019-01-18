@@ -28,5 +28,5 @@ end
 post '/players/:id' do
   deck = Deck.new(params)
   deck.save
-  redirect to("/players/#{params[:id]}")
+  redirect to("/decks/#{deck.id}")
 end

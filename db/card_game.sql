@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS games;
+DROP TABLE IF EXISTS cards_decks;
 DROP TABLE IF EXISTS decks;
 DROP TABLE IF EXISTS cards;
 DROP TABLE IF EXISTS players;
@@ -23,17 +24,15 @@ CREATE TABLE cards (
 CREATE TABLE decks (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
-  player_id INT4 REFERENCES players(id),
-  card_1 INT4 REFERENCES cards(id),
-  card_2 INT4 REFERENCES cards(id),
-  card_3 INT4 REFERENCES cards(id),
-  card_4 INT4 REFERENCES cards(id),
-  card_5 INT4 REFERENCES cards(id),
-  card_6 INT4 REFERENCES cards(id),
-  card_7 INT4 REFERENCES cards(id),
-  card_8 INT4 REFERENCES cards(id),
-  card_9 INT4 REFERENCES cards(id),
-  card_10 INT4 REFERENCES cards(id)
+  player_id INT4 REFERENCES players(id)
+);
+
+CREATE TABLE cards_decks (
+  id SERIAL8 PRIMARY KEY,
+  card_id INT4 REFERENCES cards(id),
+  deck_id INT4 REFERENCES decks(id),
+  in_hand BOOLEAN,
+  played BOOLEAN
 );
 
 CREATE TABLE games (

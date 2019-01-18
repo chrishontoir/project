@@ -4,9 +4,6 @@ require_relative('../models/deck.rb')
 require_relative('../models/player.rb')
 
 
-
-
-
 class Game
 
   attr_reader :id
@@ -53,12 +50,8 @@ class Game
     return Game.new(game)
   end
 
-  def player1_add_card_to_hand(card)
-    @player1_hand.push(card)
-  end
-
-  def player2_add_card_to_hand(card)
-    @player2_hand.push(card)
+  def get_cards_in_hand
+    return @player1_deck
   end
 
 end
