@@ -30,5 +30,20 @@ class Card_Deck
     return card_decks.map {|card_deck| Card_Deck.new(card_deck)}
   end
 
+  def update()
+    sql = "UPDATE cards_decks SET (card_id, deck_id, in_hand, played) = ($1, $2, $3, $4) WHERE id = $5"
+    values = [@card_id, @deck_id, @in_hand, @played, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def change_hand
+    if @in_hand == "f"
+      @in_hand = "t"
+    elsif @in_hand == "t"
+      @in_hand = "f"
+    end
+    update()
+  end
+
 
 end

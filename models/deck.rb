@@ -34,6 +34,13 @@ class Deck
     return cards.map {|card| Card.new(card)}
   end
 
+  def cards_not_in_hand()
+    sql = "SELECT cards_decks.* FROM cards INNER JOIN cards_decks ON cards.id = cards_decks.card_id WHERE cards_decks.deck_id = $1 AND cards_decks.in_hand = FALSE ORDER BY cards_decks.id ASC"
+    values = [@id]
+    cards = SqlRunner.run(sql, values)
+    return cards.map {|card| Card_Deck.new(card)}
+  end
+
   def cards_played()
     sql = "SELECT cards.* FROM cards INNER JOIN cards_decks ON cards.id = cards_decks.card_id WHERE cards_decks.deck_id = $1 AND cards_decks.played = TRUE ORDER BY cards_decks.id ASC"
     values = [@id]
@@ -47,6 +54,10 @@ class Deck
 
   def cards_in_hand_count()
     return cards_in_hand.count
+  end
+
+  def cards_not_in_hand_count()
+    return cards_not_in_hand.count
   end
 
   def cards_played_count()
@@ -78,6 +89,13 @@ class Deck
     values = [@card_1]
     card_id = SqlRunner.run(sql, values).first
     @card_1 = card_id
+  end
+
+  def check_hand
+    while cards_in_hand_count < 5
+      cards_not_in_hand[0].change_hand()
+      cards_not_in_hand[0].update()
+    end
   end
 
 

@@ -61,6 +61,8 @@ get '/games/:id' do
   @player2 = Player.find(@game.player2_id)
   @player1_deck = Deck.find(@game.player1_deck)
   @player2_deck = Deck.find(@game.player2_deck)
+  @player1_deck.check_hand()
+  @player2_deck.check_hand()
   @player1_hand = @player1_deck.cards_in_hand()
   @player2_hand = @player2_deck.cards_in_hand()
   erb(:"games/play")
