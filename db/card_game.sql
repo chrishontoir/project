@@ -32,7 +32,8 @@ CREATE TABLE cards_decks (
   card_id INT4 REFERENCES cards(id),
   deck_id INT4 REFERENCES decks(id),
   in_hand BOOLEAN,
-  played BOOLEAN
+  played BOOLEAN,
+  order_num INT8
 );
 
 CREATE TABLE games (

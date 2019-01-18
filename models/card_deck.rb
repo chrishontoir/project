@@ -7,7 +7,7 @@ require_relative('../models/game.rb')
 class Card_Deck
 
   attr_reader :id
-  attr_accessor :card_id, :deck_id, :in_hand, :played
+  attr_accessor :card_id, :deck_id, :in_hand, :played, :order_num
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -15,11 +15,12 @@ class Card_Deck
     @deck_id = options['deck_id'].to_i
     @in_hand = options['in_hand']
     @played = options['played']
+    @order_num = options['order_num'].to_i
   end
 
   def save()
-    sql = "INSERT INTO cards_decks (card_id, deck_id, in_hand, played) VALUES ($1, $2, $3, $4) RETURNING id"
-    values = [@card_id, @deck_id, @in_hand, @played]
+    sql = "INSERT INTO cards_decks (card_id, deck_id, in_hand, played, order_num) VALUES ($1, $2, $3, $4, $5) RETURNING id"
+    values = [@card_id, @deck_id, @in_hand, @played, @order_num]
     card_deck = SqlRunner.run(sql, values).first
     @id = card_deck['id'].to_i
   end
@@ -31,8 +32,8 @@ class Card_Deck
   end
 
   def update()
-    sql = "UPDATE cards_decks SET (card_id, deck_id, in_hand, played) = ($1, $2, $3, $4) WHERE id = $5"
-    values = [@card_id, @deck_id, @in_hand, @played, @id]
+    sql = "UPDATE cards_decks SET (card_id, deck_id, in_hand, played, order_num) = ($1, $2, $3, $4, $5) WHERE id = $6"
+    values = [@card_id, @deck_id, @in_hand, @played, @order_num, @id]
     SqlRunner.run(sql, values)
   end
 

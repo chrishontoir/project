@@ -68,7 +68,8 @@ card_deck1 = Card_Deck.new({
   "card_id" => card1.id,
   "deck_id" => deck1.id,
   "in_hand" => 0,
-  "played" => 0
+  "played" => 0,
+  "order_num" => rand(10000)
 })
 card_deck1.save()
 
@@ -76,7 +77,8 @@ card_deck2 = Card_Deck.new({
   "card_id" => card1.id,
   "deck_id" => deck1.id,
   "in_hand" => 1,
-  "played" => 0
+  "played" => 0,
+  "order_num" => rand(10000)
 })
 card_deck2.save()
 
@@ -84,7 +86,8 @@ card_deck3 = Card_Deck.new({
   "card_id" => card1.id,
   "deck_id" => deck1.id,
   "in_hand" => 0,
-  "played" => 0
+  "played" => 0,
+  "order_num" => rand(10000)
 })
 card_deck3.save()
 
@@ -92,7 +95,8 @@ card_deck4 = Card_Deck.new({
   "card_id" => card1.id,
   "deck_id" => deck1.id,
   "in_hand" => 1,
-  "played" => 0
+  "played" => 0,
+  "order_num" => rand(10000)
 })
 card_deck4.save()
 
@@ -100,7 +104,8 @@ card_deck5 = Card_Deck.new({
   "card_id" => card1.id,
   "deck_id" => deck1.id,
   "in_hand" => 0,
-  "played" => 0
+  "played" => 0,
+  "order_num" => rand(10000)
 })
 card_deck5.save()
 
@@ -108,7 +113,8 @@ card_deck6 = Card_Deck.new({
   "card_id" => card1.id,
   "deck_id" => deck2.id,
   "in_hand" => 0,
-  "played" => 0
+  "played" => 0,
+  "order_num" => rand(10000)
 })
 card_deck6.save()
 
@@ -116,7 +122,8 @@ card_deck7 = Card_Deck.new({
   "card_id" => card1.id,
   "deck_id" => deck2.id,
   "in_hand" => 0,
-  "played" => 0
+  "played" => 0,
+  "order_num" => rand(10000)
 })
 card_deck7.save()
 
@@ -124,7 +131,8 @@ card_deck8 = Card_Deck.new({
   "card_id" => card1.id,
   "deck_id" => deck2.id,
   "in_hand" => 0,
-  "played" => 0
+  "played" => 0,
+  "order_num" => rand(10000)
 })
 card_deck8.save()
 
@@ -132,7 +140,8 @@ card_deck9 = Card_Deck.new({
   "card_id" => card1.id,
   "deck_id" => deck3.id,
   "in_hand" => 0,
-  "played" => 0
+  "played" => 0,
+  "order_num" => rand(10000)
 })
 card_deck9.save()
 
@@ -140,7 +149,8 @@ card_deck10 = Card_Deck.new({
   "card_id" => card1.id,
   "deck_id" => deck3.id,
   "in_hand" => 0,
-  "played" => 0
+  "played" => 0,
+  "order_num" => rand(10000)
 })
 card_deck10.save()
 

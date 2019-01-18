@@ -35,7 +35,7 @@ class Deck
   end
 
   def cards_not_in_hand()
-    sql = "SELECT cards_decks.* FROM cards INNER JOIN cards_decks ON cards.id = cards_decks.card_id WHERE cards_decks.deck_id = $1 AND cards_decks.in_hand = FALSE ORDER BY cards_decks.id ASC"
+    sql = "SELECT cards_decks.* FROM cards INNER JOIN cards_decks ON cards.id = cards_decks.card_id WHERE cards_decks.deck_id = $1 AND cards_decks.in_hand = FALSE ORDER BY cards_decks.order_num ASC"
     values = [@id]
     cards = SqlRunner.run(sql, values)
     return cards.map {|card| Card_Deck.new(card)}
