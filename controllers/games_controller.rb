@@ -37,13 +37,13 @@ put '/games/:id' do
   @editted_game = Game.find(params[:id])
 
   @editted_game.date = params[:date]
-  @editted_game.player1_health = 30
+  @editted_game.player1_health = params[:player1_health].to_i
   @editted_game.player1_power = params[:player1_power]
   @editted_game.player1_deck = params[:player1_deck]
   @editted_game.player1_hand = params[:player1_hand].to_i
   @editted_game.player1_played = params[:player1_played]
 
-  @editted_game.player2_health = 30
+  @editted_game.player2_health = params[:player2_health].to_i
   @editted_game.player2_power = params[:player2_power]
   @editted_game.player2_deck = params[:player2_deck]
   @editted_game.player2_hand = params[:player2_hand].to_i
@@ -61,7 +61,14 @@ put '/games/:id' do
   end
 
   @editted_game.update()
-  redirect to("/games/#{params[:id]}")
+
+  if @editted_game.player1_health <= 0
+     redirect to("/games/over/#{params[:player2_id]}")
+   elsif @editted_game.player2_health <= 0
+     redirect to("/games/over/#{params[:player1_id]}")
+   else
+    redirect to("/games/#{params[:id]}")
+   end
 end
 
 get '/games/:id' do
@@ -72,6 +79,8 @@ get '/games/:id' do
 
   @game.player1_played = 0
   @game.player2_played = 0
+  @game.player1_health = 30
+  @game.player2_health = 30
 
   @player1 = Player.find(@game.player1_id)
   @player2 = Player.find(@game.player2_id)
@@ -84,4 +93,9 @@ get '/games/:id' do
   @player1_hand = @player1_deck.cards_in_hand()
   @player2_hand = @player2_deck.cards_in_hand()
   erb(:"games/play")
+end
+
+get '/games/over/:id' do
+  @winner = Player.find(params[:id])
+  erb(:"games/over")
 end
