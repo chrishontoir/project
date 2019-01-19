@@ -2,6 +2,7 @@ require_relative('../db/sql_runner.rb')
 require_relative('../models/card.rb')
 require_relative('../models/deck.rb')
 require_relative('../models/player.rb')
+require_relative('../models/card_deck.rb')
 
 
 class Game
@@ -52,6 +53,11 @@ class Game
 
   def get_cards_in_hand
     return @player1_deck
+  end
+
+  def play_card(card)
+    played_card = Card_Deck.find(card)
+    played_card.play_card()
   end
 
 end

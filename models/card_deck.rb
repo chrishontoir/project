@@ -31,6 +31,13 @@ class Card_Deck
     return card_decks.map {|card_deck| Card_Deck.new(card_deck)}
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM cards_decks WHERE id = $1"
+    values = [id]
+    card_deck = SqlRunner.run(sql, values).first
+    return Card_Deck.new(card_deck)
+  end
+
   def update()
     sql = "UPDATE cards_decks SET (card_id, deck_id, in_hand, played, order_num) = ($1, $2, $3, $4, $5) WHERE id = $6"
     values = [@card_id, @deck_id, @in_hand, @played, @order_num, @id]
@@ -43,6 +50,12 @@ class Card_Deck
     elsif @in_hand == "t"
       @in_hand = "f"
     end
+    update()
+  end
+
+  def play_card
+    @in_hand = 0
+    @played = 1
     update()
   end
 

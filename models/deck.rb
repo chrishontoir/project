@@ -8,7 +8,7 @@ class Deck
   attr_accessor :name, :player_id
 
   def initialize(options)
-    @id = options['id'].to_i if options ['id']
+    @id = options['id'].to_i if options['id']
     @name = options['name']
     @player_id = options['player_id'].to_i
   end
