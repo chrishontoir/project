@@ -27,7 +27,7 @@ class Game
     @player2_hand = options['player2_hand']
     @player2_played = options['player2_played']
 
-    @status = options['status']
+    @status = options['status'].to_i
 
   end
 
@@ -58,6 +58,10 @@ class Game
   def play_card(card)
     played_card = Card_Deck.find(card)
     played_card.play_card()
+  end
+
+  def increase_status
+    @status += 1
   end
 
 end

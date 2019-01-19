@@ -67,17 +67,7 @@ end
 get '/games/:id' do
   @game = Game.find(params['id'].to_i)
 
-  # @game.play_card(@game.player1_hand)
-  # @game.play_card(@game.player2_hand)
-  #
-  # if @game.player1_hand != ""
-  #   p1_card = Card_Deck.find(@game.player1_hand.to_i)
-  #   p1_card.play_card()
-  # end
-  # if @game.player2_hand != ""
-  #   p2_card = Card_Deck.find(@game.player2_hand.to_i)
-  #   p2_card.play_card()
-  # end
+  @game.increase_status()
 
   @player1 = Player.find(@game.player1_id)
   @player2 = Player.find(@game.player2_id)
