@@ -28,7 +28,7 @@ class Deck
   end
 
   def cards_in_hand()
-    sql = "SELECT cards.* FROM cards INNER JOIN cards_decks ON cards.id = cards_decks.card_id WHERE cards_decks.deck_id = $1 AND cards_decks.in_hand = TRUE ORDER BY cards_decks.id ASC"
+    sql = "SELECT cards.*, cards_decks.id FROM cards INNER JOIN cards_decks ON cards.id = cards_decks.card_id WHERE cards_decks.deck_id = $1 AND cards_decks.in_hand = TRUE ORDER BY cards_decks.order_num ASC"
     values = [@id]
     cards = SqlRunner.run(sql, values)
     return cards.map {|card| Card.new(card)}
@@ -36,6 +36,13 @@ class Deck
 
   def cards_not_in_hand()
     sql = "SELECT cards_decks.* FROM cards INNER JOIN cards_decks ON cards.id = cards_decks.card_id WHERE cards_decks.deck_id = $1 AND cards_decks.in_hand = FALSE ORDER BY cards_decks.order_num ASC"
+    values = [@id]
+    cards = SqlRunner.run(sql, values)
+    return cards.map {|card| Card_Deck.new(card)}
+  end
+
+  def cards_not_in_hand_not_played()
+    sql = "SELECT cards_decks.* FROM cards INNER JOIN cards_decks ON cards.id = cards_decks.card_id WHERE cards_decks.deck_id = $1 AND cards_decks.in_hand = FALSE AND cards_decks.played = FALSE ORDER BY cards_decks.order_num ASC"
     values = [@id]
     cards = SqlRunner.run(sql, values)
     return cards.map {|card| Card_Deck.new(card)}
@@ -58,6 +65,10 @@ class Deck
 
   def cards_not_in_hand_count()
     return cards_not_in_hand.count
+  end
+
+  def cards_not_in_hand_not_played_count()
+    return cards_not_in_hand_not_played.count
   end
 
   def cards_played_count()
@@ -92,11 +103,23 @@ class Deck
   end
 
   def check_hand
-    while cards_in_hand_count < 5
-      cards_not_in_hand[0].change_hand()
-      cards_not_in_hand[0].update()
+    counter = 0
+    while counter < 5
+      if cards_in_hand_count < 5 && cards_not_in_hand_not_played_count > 0
+        cards_not_in_hand_not_played.first.change_hand if cards_not_in_hand_not_played.first != nil
+        cards_not_in_hand_not_played.first.update if cards_not_in_hand_not_played.first != nil
+      end
+      counter += 1
     end
   end
+
+  #    cards_not_in_hand_not_played_count > 0
+  #     while cards_in_hand_count < 5
+  #       cards_not_in_hand_not_played.first.change_hand
+  #       cards_not_in_hand_not_played.first.update
+  #     end
+  #   end
+  # end
 
 
 end

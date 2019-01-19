@@ -13,7 +13,7 @@
 <p>Hand: </p>
 <% for card in @player1_hand %>
 <input type="radio" id="p1-selected" name="p1_selected" value="<%=card.id%>">
-<label for="p1-selected"><%=card.name%></label>
+<label for="p1-selected"><%=card.id%><%=card.name%><br><%=card.description%><br><%=card.damage%><br><%=card.healing%><br><%=card.cost%><br></label>
 <% end %>
 
 <p>Player 2:</p>
@@ -24,7 +24,7 @@
 <p>Hand: </p>
 <% for card in @player2_hand %>
 <input type="radio" id="p2-selected" name="p2_selected" value="<%=card.id%>">
-<label for="p2-selected"><%=card.name%></label>
+<label for="p2-selected"><%=card.id%><%=card.name%><br><%=card.description%><br><%=card.damage%><br><%=card.healing%><br><%=card.cost%><br></label>
 <% end %>
 
 <p><a href="/">Quit</a></p>
