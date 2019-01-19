@@ -7,14 +7,14 @@
 
   <p><%=@player1.name%></p>
   <% for deck in @player1.full_decks %>
-    <input type="radio" id="player1-deck" name="player1_deck" value="<%=deck.id%>" required <% if deck.name = "Default Deck"%>checked<% end %>>
+    <input type="radio" id="player1-deck" name="player1_deck" value="<%=deck.id%>" required >
     <label for="player1-deck"><%=deck.name%></label>
     <br>
   <% end %>
 
   <p><%=@player2.name%></p>
   <% for deck in @player2.full_decks %>
-    <input type="radio" id="player2-deck" name="player2_deck" value="<%=deck.id%>" required <% if deck.name = "Default Deck"%>checked<% end %>>
+    <input type="radio" id="player2-deck" name="player2_deck" value="<%=deck.id%>" required >
     <label for="player2-deck"><%=deck.name%></label>
     <br>
   <% end %>
