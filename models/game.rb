@@ -64,4 +64,15 @@ class Game
     @status += 1
   end
 
+  def increase_power
+    @player1_power = 6 & @player2_power = 6 if @status >= 11
+    @player1_power = 5 & @player2_power = 5 if @status < 11
+    @player1_power = 4 & @player2_power = 4 if @status < 9
+    @player1_power = 3 & @player2_power = 3 if @status < 7
+    @player1_power = 2 & @player2_power = 2 if @status < 5
+    @player1_power = 1 & @player2_power = 1 if @status < 3
+  end
+
+
+
 end

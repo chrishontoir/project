@@ -68,6 +68,7 @@ get '/games/:id' do
   @game = Game.find(params['id'].to_i)
 
   @game.increase_status()
+  @game.increase_power()
 
   @game.player1_played = 0
   @game.player2_played = 0
