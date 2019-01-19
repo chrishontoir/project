@@ -51,11 +51,11 @@ put '/games/:id' do
 
   @editted_game.status = params[:status]
 
-  if @editted_game.player1_played != ""
+  if @editted_game.player1_played != "0"
     p1_card = Card_Deck.find(@editted_game.player1_played)
     p1_card.play_card()
   end
-  if @editted_game.player2_played != ""
+  if @editted_game.player2_played != "0"
     p2_card = Card_Deck.find(@editted_game.player2_played)
     p2_card.play_card()
   end
@@ -68,6 +68,9 @@ get '/games/:id' do
   @game = Game.find(params['id'].to_i)
 
   @game.increase_status()
+
+  @game.player1_played = 0
+  @game.player2_played = 0
 
   @player1 = Player.find(@game.player1_id)
   @player2 = Player.find(@game.player2_id)

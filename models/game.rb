@@ -18,14 +18,14 @@ class Game
     @player1_power = options['player1_power'].to_i
     @player1_deck = options['player1_deck'].to_i
     @player1_hand = options['player1_hand']
-    @player1_played = options['player1_played']
+    @player1_played = options['player1_played'].to_i
 
     @player2_id = options['player2_id'].to_i
     @player2_health = options['player2_health'].to_i
     @player2_power = options['player2_power'].to_i
     @player2_deck = options['player2_deck'].to_i
     @player2_hand = options['player2_hand']
-    @player2_played = options['player2_played']
+    @player2_played = options['player2_played'].to_i
 
     @status = options['status'].to_i
 
