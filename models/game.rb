@@ -50,9 +50,6 @@ class Game
     return Game.new(game)
   end
 
-  def check_hand
-  end
-
   def get_cards_in_hand
     return @player1_deck
   end

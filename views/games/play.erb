@@ -10,21 +10,43 @@
 <p>Deck: <%=@player1_deck.name%></p>
 <p>Health: <%=@game.player1_health%></p>
 <p>Power: <%=@game.player1_power%></p>
-<p>Hand: </p>
-<% for card in @player1_hand %>
-<input type="radio" id="p1-selected" name="p1_selected" value="<%=card.id%>">
-<label for="p1-selected"><%=card.id%><%=card.name%><br><%=card.description%><br><%=card.damage%><br><%=card.healing%><br><%=card.cost%><br></label>
-<% end %>
+
+<form action="/games/<%=@game.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <input type="hidden" name="date" value="<%=@game.date%>">
+
+  <input type="hidden" name="player1_id" value="<%=@game.player1_id%>">
+  <input type="hidden" name="player1_health" value="<%=@game.player1_health%>">
+  <input type="hidden" name="player1_power" value="<%=@game.player1_power%>">
+  <input type="hidden" name="player1_hand" value="<%=@game.player1_hand%>">
+
+  <% for card in @player1_hand %>
+  <input type="radio" id="player1-played" name="player1_played" value="<%=card.id%>">
+  <label for="p1-selected"><%=card.id%><%=card.name%><br><%=card.description%><br><%=card.damage%><br><%=card.healing%><br><%=card.cost%><br></label>
+  <% end %>
+
+  <input type="hidden" name="player2_id" value="<%=@game.player2_id%>">
+  <input type="hidden" name="player2_health" value="<%=@game.player2_health%>">
+  <input type="hidden" name="player2_power" value="<%=@game.player2_power%>">
+  <input type="hidden" name="player2_hand" value="<%=@game.player2_hand%>">
+
+  <% for card in @player2_hand %>
+  <input type="radio" id="player2-played" name="player2_played" value="<%=card.id%>">
+  <label for="p2-selected"><%=card.id%><%=card.name%><br><%=card.description%><br><%=card.damage%><br><%=card.healing%><br><%=card.cost%><br></label>
+  <% end %>
+
+  <input type="hidden" name="status" value="<%=@game.status%>">
+
+  <input type="submit" value="Play">
+
+
+</form>
 
 <p>Player 2:</p>
 <p>Name: <%=@player2.name%></p>
 <p>Deck: <%=@player2_deck.name%></p>
 <p>Health: <%=@game.player2_health%></p>
 <p>Power: <%=@game.player2_power%></p>
-<p>Hand: </p>
-<% for card in @player2_hand %>
-<input type="radio" id="p2-selected" name="p2_selected" value="<%=card.id%>">
-<label for="p2-selected"><%=card.id%><%=card.name%><br><%=card.description%><br><%=card.damage%><br><%=card.healing%><br><%=card.cost%><br></label>
-<% end %>
 
 <p><a href="/">Quit</a></p>

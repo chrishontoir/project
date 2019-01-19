@@ -47,5 +47,20 @@ class Player
     return results.map { |game| Game.new(game)}
   end
 
+  def full_decks
+    all_decks = decks()
+    full_decks_array = []
+    for deck in all_decks
+      if deck.card_count == 10
+        full_decks_array.push(deck)
+      end
+    end
+    return full_decks_array
+  end
+
+  def full_decks_count()
+    full_decks.count()
+  end
+
 
 end
