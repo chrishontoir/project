@@ -17,6 +17,7 @@ end
 
 post '/players' do
   player = Player.new(params)
+  player.name.capitalize()
   player.save
   deck = Deck.new({"name" => "Default Deck", "player_id" => player.id}).save()
   card_deck1 = Card_Deck.new({"card_id" => 1, "deck_id" => "#{deck}", "in_hand" => 0, "played" => 0, "order_num" => rand(10000)}).save()

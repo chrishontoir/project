@@ -8,7 +8,7 @@ class Player
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @name = options['name']
+    @name = options['name'].capitalize()
     @deck_array = options['deck_array']
     @games = options['games']
   end
