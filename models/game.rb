@@ -80,6 +80,14 @@ class Game
     end
   end
 
+  def game_over
+    if @player1_health <= 0 || @player2_health <= 0
+      return true
+    else
+      return false
+    end
+  end
+
 
 
 end

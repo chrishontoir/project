@@ -61,7 +61,33 @@ put '/games/:id' do
     p2_card.play_card()
   end
 
+  @player1_deck = Deck.find(@editted_game.player1_deck)
+  @player2_deck = Deck.find(@editted_game.player2_deck)
+
+  @editted_game.player1_health = 30
+  @editted_game.player2_health = 30
+  @editted_game.player1_health -= @player2_deck.cards_played_damage()
+  @editted_game.player2_health -= @player1_deck.cards_played_damage()
+  @editted_game.player1_health += @player1_deck.cards_played_healing()
+  @editted_game.player2_health += @player2_deck.cards_played_healing()
+
   @editted_game.update()
+
+  if @player1_deck.cards_played_count == 10 && @player2_deck.cards_played_count == 10
+    if @editted_game.player1_health > @editted_game.player2_health
+      @editted_game.status = @editted_game.player1_id
+      @editted_game.update()
+      redirect to("/games/over/#{params[:player1_id]}")
+    elsif @editted_game.player2_health > @editted_game.player1_health
+      @editted_game.status = @editted_game.player2_id
+      @editted_game.update()
+      redirect to("/games/over/#{params[:player2_id]}")
+    else
+      @editted_game.status = 111111
+      @editted_game.update()
+      redirect to("/games/over/#{params[:player2_id]}/draw")
+    end
+  end
 
   if @editted_game.player1_health <= 0
      redirect to("/games/over/#{params[:player2_id]}")
