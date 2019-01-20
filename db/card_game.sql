@@ -18,7 +18,8 @@ CREATE TABLE cards (
   description VARCHAR(255),
   damage INT4,
   healing INT4,
-  cost INT4
+  cost INT4,
+  image VARCHAR(255)
 );
 
 CREATE TABLE decks (

@@ -26,6 +26,7 @@
     <% for card in @player1_hand %>
       <div class="card_template">
         <input type="radio" id="player1-played" name="player1_played" value="<%=card.id%>" required <% if card.cost > @game.player1_power %>disabled<% end %>>
+        <div class="card_image"><img src="<%=card.image%>" alt=""></div>
         <label for="player1-played"><p class="card_name"><%=card.name%></p><p class="card_description"><%=card.description%></p>
           <div class="card_attributes"><p class="card_damage"><%=card.damage%></p><p class="card_healing"><%=card.healing%></p><p class="card_cost"><%=card.cost%></p></div>
           <div class="card_attribute_names"><p class="card_damage_name">Damage</p><p class="card_healing_name">Healing</p><p class="card_cost_name">Cost</p></div></label>

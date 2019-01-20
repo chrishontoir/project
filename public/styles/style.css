@@ -122,7 +122,6 @@ nav > ul > a:nth-child(3) {
 
 .card_template img {
   width: 30px;
-  border: 1px solid red;
 }
 
 .card_attributes {
@@ -192,4 +191,19 @@ nav > ul > a:nth-child(3) {
 
 .card_cost_name {
   width: 40px;
+}
+
+.card_image {
+  background-color: none;
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  display: flex;
+}
+
+.card_image > img {
+  width: 60px;
+  height: 60px;
+  border: 2px solid black;
+  margin: 24px auto;
 }
