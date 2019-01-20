@@ -84,6 +84,15 @@ class Deck
     return total_damage
   end
 
+  def cards_played_healing()
+    cards = cards_played()
+    total_healing = 0
+    for card in cards
+      total_healing += card.healing
+    end
+    return total_healing
+  end
+
   def self.all()
     sql = "SELECT * FROM decks"
     decks = SqlRunner.run(sql)

@@ -59,29 +59,31 @@ nav > ul > a:nth-child(3) {
 }
 
 .content {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   background-color: none;
   height: calc(100vh - 4rem);
+  text-align: center;
 }
 
 .p1_hand {
-  display: flex;
-  justify-content: space-around;
-  position: relative;
   background-color: none;
+  margin: auto;
+  text-align: center;
+  display: inline-block;
 }
 
 .card_template {
+  float: left;
   background-color: beige;
   background-image: url(/images/card1.jpg);
   background-size: cover;
   background-repeat:no-repeat;
-  width: 300px;
+  width: 162px;
   height: 210px;
   border-radius: 2px;
   display: flex;
-  margin-right: 10px;
+  margin:0 5px;
   box-shadow: 0 0 2px black;
   opacity: 1;
   position: relative;
@@ -206,4 +208,138 @@ nav > ul > a:nth-child(3) {
   height: 60px;
   border: 2px solid black;
   margin: 24px auto;
+}
+
+.player_1_details {
+  background-color: none;
+  width: 80%;
+  margin: 0 auto;
+  height: 140px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  display: inline-block;
+}
+.p1_name_details {
+  background-color: none;
+  float: left;
+  font-size: 50px;
+  margin-right: 30px;
+  line-height: 140px;
+}
+
+.other_details {
+  float: right;
+}
+
+
+
+.p1_health_details {
+  /* background-color: none;
+  background-image: url(/images/health1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; */
+  font-size: 30px;
+  line-height: 140px;
+  float: left;
+  background-color: none;
+  right: 0px;
+}
+
+.p1_health_details img {
+  width:40px;
+  height: 40px;
+  background-color: none;
+  position: relative;
+  top: 9px;
+}
+
+.p1_power_details {
+  background-color: none;
+  font-size: 30px;
+  line-height: 140px;
+  margin-left: 20px;
+  float: left;
+}
+
+.p1_power_details img {
+  width:26px;
+  height: 26px;
+  background-color: none;
+  position: relative;
+  top: 3px;
+  margin-left: 5px;
+}
+
+.player_2_details {
+  background-color: none;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+  height: 140px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  position: relative;
+  display: inline-block;
+}
+
+.p2_name_details {
+  background-color: none;
+  float: right;
+  font-size: 50px;
+  margin-left: 30px;
+  line-height: 140px;
+}
+
+.p2_other_details {
+  float: left;
+}
+
+.p2_health_details {
+  /* background-color: none;
+  background-image: url(/images/health1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; */
+  font-size: 30px;
+  line-height: 140px;
+  float: left;
+  background-color: none;
+  right: 0px;
+}
+
+.p2_health_details img {
+  width:40px;
+  height: 40px;
+  background-color: none;
+  position: relative;
+  top: 9px;
+}
+
+.p2_power_details {
+  background-color: none;
+  font-size: 30px;
+  line-height: 140px;
+  margin-left: 20px;
+  float: left;
+}
+
+.p2_power_details img {
+  width:26px;
+  height: 26px;
+  background-color: none;
+  position: relative;
+  top: 3px;
+  margin-left: 5px;
+}
+
+#turn {
+  color: #BADA55;
+}
+
+.play_submit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
 }

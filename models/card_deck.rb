@@ -59,5 +59,11 @@ class Card_Deck
     update()
   end
 
+  def reset_card
+    @in_hand = 0
+    @played = 0
+    update()
+  end
+
 
 end

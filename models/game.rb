@@ -73,6 +73,13 @@ class Game
     @player1_power = 1 & @player2_power = 1 if @status < 3
   end
 
+  def reset_all_cards
+    all_cards = Card_Deck.all()
+    for card in all_cards
+      card.reset_card
+    end
+  end
+
 
 
 end

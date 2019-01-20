@@ -22,6 +22,7 @@ post '/games' do
   game = Game.new(params)
   game.date = "#{DateTime.now.strftime("%d/%m/%Y %H:%M")}"
   game.save
+  game.reset_all_cards()
   redirect to("/games/#{game.id}/decks")
 end
 
@@ -88,6 +89,8 @@ get '/games/:id' do
   @player2_deck = Deck.find(@game.player2_deck)
   @game.player1_health -= @player2_deck.cards_played_damage()
   @game.player2_health -= @player1_deck.cards_played_damage()
+  @game.player1_health += @player1_deck.cards_played_healing()
+  @game.player2_health += @player2_deck.cards_played_healing()
   @player1_deck.check_hand()
   @player2_deck.check_hand()
   @player1_hand = @player1_deck.cards_in_hand()
