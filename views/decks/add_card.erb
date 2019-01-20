@@ -1,16 +1,21 @@
-<h1>Add Card to Deck</h1>
 
-<p>Deck: <%=@deck.name%></p>
-
+<div class="add_card_deck_name"><p><%=@deck.name%></p></div>
 
 <form action="/decks/<%=@deck.id%>/add" method="post">
-<ul>
-  <% for card in @cards %>
-    <input type="radio" id="card-id" name="card_id" value="<%=card.id%>">
-    <label for="card-id"><%=card.name%></label>
-  <% end %>
-</ul>
-
+  <div class="add_card_content">
+    <ul>
+      <% for card in @cards %>
+        <div class="card_template_add">
+          <input type="radio" id="card-id" name="card_id" value="<%=card.id%>" required>
+          <div class="card_image"><img src="<%=card.image%>" alt=""></div>
+          <label for="card-id"><p class="card_name"><%=card.name%></p><p class="card_description"><%=card.description%></p>
+            <div class="card_attributes"><p class="card_damage"><%=card.damage%></p><p class="card_healing"><%=card.healing%></p><p class="card_cost"><%=card.cost%></p></div>
+            <div class="card_attribute_names"><p class="card_damage_name">Damage</p><p class="card_healing_name">Healing</p><p class="card_cost_name">Cost</p></div>
+          </label>
+        </div>
+      <% end %>
+    </ul>
+  </div>
   <input type="hidden" id="deck-id" name="deck_id" value="<%=@deck.id%>">
   <input type="hidden" id="in-hand" name="in_hand" value="0">
   <input type="hidden" id="played" name="played" value="0">

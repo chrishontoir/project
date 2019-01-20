@@ -32,7 +32,7 @@ end
 
 get '/decks/:id/add' do
   @deck = Deck.find(params['id'].to_i)
-  @cards = Card.all()
+  @cards = Card.all_cost_name()
   erb(:"decks/add_card")
 end
 

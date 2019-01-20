@@ -28,6 +28,12 @@ class Card
     return cards.map {|card| Card.new(card)}
   end
 
+  def self.all_cost_name()
+    sql = "SELECT * FROM cards ORDER BY cost ASC, damage ASC, healing ASC, name ASC"
+    cards = SqlRunner.run(sql)
+    return cards.map {|card| Card.new(card)}
+  end
+
   def self.find(id)
     sql = "SELECT * FROM cards WHERE id = $1"
     values = [id]

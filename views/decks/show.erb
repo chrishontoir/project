@@ -3,11 +3,19 @@
 <p>Name: <%=@deck.name%></p>
 <p>Cards: </p>
 
-<ul>
-  <% for card in @cards %>
-    <li><a href="/cards/<%=card.id%>"><%=card.name%></a></li>
-  <% end %>
-</ul>
+<div class="show_deck_content">
+  <ul>
+    <% for card in @cards %>
+      <div class="card_template_show">
+        <div class="card_image"><img src="<%=card.image%>" alt=""></div>
+        <label for="card-id"><p class="card_name"><%=card.name%></p><p class="card_description"><%=card.description%></p>
+          <div class="card_attributes"><p class="card_damage"><%=card.damage%></p><p class="card_healing"><%=card.healing%></p><p class="card_cost"><%=card.cost%></p></div>
+          <div class="card_attribute_names"><p class="card_damage_name">Damage</p><p class="card_healing_name">Healing</p><p class="card_cost_name">Cost</p></div>
+        </label>
+      </div>
+    <% end %>
+  </ul>
+</div>
 
 <% if @deck.card_count < 10 %>
 <p><a href="/decks/<%=@deck.id%>/add">Add Card</a></p>
