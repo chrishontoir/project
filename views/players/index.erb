@@ -1,12 +1,16 @@
-<h1>PLAYERS</h1>
+<div class="view_players_title"><p>Players</p></div>
 
-<ul>
+<div class="view_players_content">
   <% for player in @players %>
-    <li class=player-name><%=player.name%>
+  <div class="player_template">
+    <div class="player_template_avatar"><img src="/images/user.png" alt=""></div>
+    <div class=player_template_name><%=player.name%></div>
     <br>
-    <a href="/players/<%=player.id%>">View Profile</a> | Delete Profile</li>
+    <div class="player_template_options"><a href="/players/<%=player.id%>">View Profile</a> | Delete Profile</div>
+  </div>
   <% end %>
-</ul>
+
+  </div>
 
 <p><a href="/players/new">New Player</a></p>
 

@@ -1,7 +1,7 @@
-<h1>VIEW DECK</h1>
 
-<p>Name: <%=@deck.name%></p>
-<p>Cards: </p>
+<div class="add_card_deck_name"><p><%=@deck.name%></p><div class="page_subtitle">View Deck
+
+</div></div>
 
 <div class="show_deck_content">
   <ul>
@@ -21,4 +21,4 @@
 <p><a href="/decks/<%=@deck.id%>/add">Add Card</a></p>
 <% end %>
 
-<p><a href="/players/<%=@deck.player_id%>">Back</a></p>
+<div class="select"><a href="/players/<%=@deck.player_id%>">Back</a></div>

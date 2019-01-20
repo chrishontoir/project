@@ -12,21 +12,6 @@ header {
   background-color: none;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-  text-shadow: 0 0 5px black;
-  /* transition: 1s; */
-}
-
-a:hover {
-  border-bottom: 2px solid white;
-}
-
-a:nth-child(2):hover {
-  border-bottom: none;
-}
-
 nav > ul {
   display: flex;
   height: 4rem;
@@ -40,6 +25,13 @@ nav > ul > a {
   width: 25%;
   text-align: center;
   background-color: none;
+  text-decoration: none;
+  color: white;
+  text-shadow: 0 0 5px black;
+}
+
+nav > ul > a:hover {
+  border-bottom: 2px solid white;
 }
 
 nav > ul > a:nth-child(1) {
@@ -48,6 +40,10 @@ nav > ul > a:nth-child(1) {
 
 nav > ul > a:nth-child(2) {
   width: 50%;
+}
+
+nav > ul > a:nth-child(2):hover {
+  border-bottom: none;
 }
 
 nav > ul > a:nth-child(3) {
@@ -73,7 +69,8 @@ nav > ul > a:nth-child(3) {
 
 .welcome_text {
   font-size: 60px;
-  margin-top: 200px;
+  margin-top: 160px;
+  margin-bottom: 50px;
   color: white;
   text-shadow: 0 0 5px black;
 }
@@ -524,4 +521,111 @@ input[type=submit]:hover {
   font-size: 50px;
   margin-right: 30px;
   line-height: 140px;
+}
+
+.select {
+  background-color: none;
+  width: 100%;
+}
+
+.select > a {
+ background-color: none;
+ display: inline-block;
+ width: 140px;
+ height: 50px;
+ line-height: 50px;
+ margin: 0 5px;
+ text-decoration: none;
+ border-bottom: 2px solid white;
+ color: white;
+ text-shadow: 0 0 5px black;
+}
+
+.select > a:hover {
+  color: #8df70f;
+  border-bottom: 2px solid #8df70f;
+}
+
+.view_players_title {
+  background-color: none;
+  width: 77.4%;
+  margin: 0 auto;
+  height: 140px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  display: inline-block;
+}
+.view_players_title p {
+  background-color: none;
+  float: left;
+  font-size: 50px;
+  margin-right: 30px;
+  line-height: 140px;
+}
+
+.page_subtitle {
+  float: right;
+  height: 140px;
+  line-height: 140px;
+  font-size: 30px;
+}
+
+.view_players_content {
+  width: 77.4%;
+  margin: 0 auto;
+  background-color: none;
+  text-align: left;
+}
+
+.player_template {
+  background-color: rgba(0,0,0,0.3);
+  display: inline-block;
+  margin-bottom: 5px;
+  width: 240px;
+  height: 60px;
+  border: 2px solid white;
+  /* border-radius: 5px; */
+  color: white;
+  text-shadow: 0 0 5px black;
+}
+
+.player_template_avatar {
+  background-color: white;
+  width: 62px;
+  height: 60px;
+  float: left;
+  text-align: left;
+}
+
+.player_template_avatar img {
+  width: 60px
+}
+
+.player_template a {
+  text-decoration: none;
+  color: white;
+}
+
+.player_template a:hover {
+  color:#8df70f;
+}
+
+.player_template_name {
+  font-size: 24px;
+  background-color: none;
+  height: 42px;
+  margin: 0;
+  float: left;
+  width: 160px;
+  text-align: left;
+  line-height: 56px;
+  margin-left: 10px;
+}
+
+.player_template_options {
+  background-color: none;
+  font-size: 10px;
+  text-align: left;
+  float: left;
+  margin-left: 10px;
 }
