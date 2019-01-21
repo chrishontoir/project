@@ -14,14 +14,14 @@ player1 = Player.new({
 player1.save()
 
 player2 = Player.new({
-  "name" => "Jennifer",
+  "name" => "Bob",
   "deck_array" => "[]",
   "games" => "[]"
 })
 player2.save()
 
 player3 = Player.new({
-  "name" => "James",
+  "name" => "Bill",
   "deck_array" => "[]",
   "games" => "[]"
 })
