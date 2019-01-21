@@ -4,18 +4,18 @@ require_relative('../models/game.rb')
 class Player
 
   attr_reader :id
-  attr_accessor :name, :deck_array, :games
+  attr_accessor :name, :avatar, :admin
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name'].capitalize()
-    @deck_array = options['deck_array']
-    @games = options['games']
+    @avatar = options['avatar']
+    @admin = options['admin']
   end
 
   def save()
-    sql = "INSERT INTO players (name, deck_array, games) VALUES ($1, $2, $3) RETURNING id"
-    values = [@name, @deck_array, @games]
+    sql = "INSERT INTO players (name, avatar, admin) VALUES ($1, $2, $3) RETURNING id"
+    values = [@name, @avatar, @admin]
     player = SqlRunner.run(sql, values).first
     @id = player['id'].to_i
   end
@@ -61,6 +61,19 @@ class Player
   def full_decks_count()
     full_decks.count()
   end
+
+  def self.no_of_players_full_deck
+    players = Player.all()
+    number = 0
+    for player in players
+      if player.full_decks_count > 0
+        number += 1
+      end
+    end
+    return number
+  end
+
+
 
 
 end

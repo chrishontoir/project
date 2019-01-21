@@ -8,22 +8,22 @@ require('date')
 
 player1 = Player.new({
   "name" => "Chris",
-  "deck_array" => "[]",
-  "games" => "[]"
+  "avatar" => "/images/spectral_bear.png",
+  "admin" => 1
 })
 player1.save()
 
 player2 = Player.new({
   "name" => "Bob",
-  "deck_array" => "[]",
-  "games" => "[]"
+  "avatar" => "/images/user.png",
+  "admin" => 0
 })
 player2.save()
 
 player3 = Player.new({
   "name" => "Bill",
-  "deck_array" => "[]",
-  "games" => "[]"
+  "avatar" => "/images/user.png",
+  "admin" => "0"
 })
 player3.save()
 

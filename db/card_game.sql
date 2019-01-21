@@ -8,8 +8,8 @@ DROP TABLE IF EXISTS players;
 CREATE TABLE players (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
-  deck_array VARCHAR(255),
-  games VARCHAR(255)
+  avatar VARCHAR(255),
+  admin BOOLEAN
 );
 
 CREATE TABLE cards (

@@ -18,6 +18,10 @@ end
 post '/players' do
   player = Player.new(params)
   player.name.capitalize()
+
+  if player.avatar == ""
+    player.avatar = "/images/user.png"
+  end
   player.save
   deck = Deck.new({"name" => "Default Deck", "player_id" => player.id}).save()
   card_deck1 = Card_Deck.new({"card_id" => 1, "deck_id" => "#{deck}", "in_hand" => 0, "played" => 0, "order_num" => rand(10000)}).save()
@@ -30,7 +34,7 @@ post '/players' do
   card_deck8 = Card_Deck.new({"card_id" => 19, "deck_id" => "#{deck}", "in_hand" => 0, "played" => 0, "order_num" => rand(10000)}).save()
   card_deck9 = Card_Deck.new({"card_id" => 22, "deck_id" => "#{deck}", "in_hand" => 0, "played" => 0, "order_num" => rand(10000)}).save()
   card_deck10 = Card_Deck.new({"card_id" => 24, "deck_id" => "#{deck}", "in_hand" => 0, "played" => 0, "order_num" => rand(10000)}).save()
-  redirect to("/players/#{player.id}")
+  redirect to("/players")
 end
 
 get '/players/:id' do

@@ -14,6 +14,7 @@ require('date')
 
 get '/games/new' do
   @players = Player.all()
+  @number = Player.no_of_players_full_deck()
   @decks = Deck.all()
   erb(:"games/new")
 end
