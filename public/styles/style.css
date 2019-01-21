@@ -343,6 +343,14 @@ nav > ul > a:nth-child(3) {
   line-height: 140px;
 }
 
+.p1_name_details img {
+  width: 38px;
+  border: 2px solid black;
+  position: relative;
+  top: 4px;
+  margin-right: 5px;
+}
+
 .other_details {
   float: right;
 }
@@ -405,6 +413,14 @@ nav > ul > a:nth-child(3) {
   font-size: 50px;
   margin-left: 30px;
   line-height: 140px;
+}
+
+.p2_name_details img {
+  width: 38px;
+  border: 2px solid black;
+  position: relative;
+  top: 4px;
+  margin-left: 5px;
 }
 
 .p2_other_details {
@@ -628,4 +644,100 @@ input[type=submit]:hover {
   text-align: left;
   float: left;
   margin-left: 10px;
+}
+
+.new_player_content {
+  background-color: none;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.new_player_content input {
+  height: 40px;
+  width: 240px;
+  margin-left: 5px;
+  font-family: 'Spinnaker', sans-serif;
+  text-align: center;
+  background-color: rgba(255,255,255,0.9);
+  border: 2px solid black;
+  color: black;
+  font-size: 14px;
+}
+
+.new_player_content input::placeholder {
+  color: grey;
+}
+
+.new_player_content label {
+  color: white;
+  text-shadow: 0 0 5px black;
+}
+
+#player-name {
+  margin-right: 50px;
+}
+
+.select_players_content {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: none;
+}
+
+.select_p1 {
+  background-color: none;
+  height: 480px;
+  width: 40%;
+  float: left;
+  overflow-y:scroll;
+}
+
+.select_p1_title {
+  float: left;
+  height:480px;
+  width: 50%;
+  background-color: none;
+  line-height: 480px;
+}
+
+.select_p1_title p {
+  color: white;
+  text-shadow: 0 0 5px black;
+  font-size: 24px;
+}
+
+.select_p2_title {
+  float: right;
+  height:480px;
+  width: 50%;
+  background-color: none;
+  line-height: 480px;
+}
+
+.select_p2_title p {
+  color: white;
+  text-shadow: 0 0 5px black;
+  font-size: 24px;
+}
+
+.select_vs {
+  background-color: none;
+  height: 480px;
+  width: 12%;
+  float: left;
+}
+
+.select_vs p {
+  line-height: 480px;
+  font-size: 100px;
+  color: white;
+  text-shadow: 0 0 5px black;
+}
+
+.select_p2 {
+  background-color: none;
+  height: 480px;
+  width: 40%;
+  float: left;
 }

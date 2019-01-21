@@ -1,6 +1,6 @@
 
 <div class="player_1_details">
-  <div class="p1_name_details" <% if @game.status % 2 == 1%>id="turn"<% end %>><%=@player1.name%></div>
+  <div class="p1_name_details" <% if @game.status % 2 == 1%>id="turn"<% end %>><img src="<%=@player1.avatar%>" alt=""><%=@player1.name%></div>
   <div class="other_details">
     <div class="p1_health_details"><%=@game.player1_health%><img src="/images/health1.png" alt=""></div>
     <div class="p1_power_details"><%=@game.player1_power%><img src="/images/gems1.png" alt=""></div>
@@ -69,7 +69,7 @@
 </form>
 
 <div class="player_2_details">
-  <div class="p2_name_details" <% if @game.status % 2 == 0%>id="turn"<% end %>><%=@player2.name%></div>
+  <div class="p2_name_details" <% if @game.status % 2 == 0%>id="turn"<% end %>><%=@player2.name%><img src="<%=@player2.avatar%>" alt=""></div>
   <div class="p2_other_details">
     <div class="p2_health_details"><%=@game.player2_health%><img src="/images/health1.png" alt=""></div>
     <div class="p2_power_details"><%=@game.player2_power%><img src="/images/gems1.png" alt=""></div>
