@@ -1,4 +1,3 @@
-<h1>NEW GAME</h1>
 
 <form action="/games" method="post">
   <div class="select_players_content">
@@ -8,12 +7,17 @@
     <div class="select_p1_title">
       <p>Player 1<p>
     </div>
-
+  <div class="display_p1">
+  <div class="scrollable">
   <% for player in @players %>
+    <div class="display_players_list">
     <input type="radio" id="player1-id" name="player1_id" value="<%=player.id%>" <% if player.full_decks_count == 0 %> disabled <% end %> required>
     <label for="player1-id" <% if player.full_decks_count == 0 %> disabled <% end %>><%=player.name%></label>
     <br>
+    </div>
   <% end %>
+  </div>
+  </div>
 
   </div>
 
@@ -25,12 +29,17 @@
     <div class="select_p2_title">
       <p>Player 2<p>
     </div>
+
+  <div class="display_p1">
+  <div class="scrollable">
   <% for player in @players %>
+    <div class="display_players_list">
     <input type="radio" id="player2-id" name="player2_id" value="<%=player.id%>" <% if player.full_decks_count == 0 %> disabled <% end %> required>
     <label for="player2-id" <% if player.full_decks_count == 0 %> disabled <% end %>><%=player.name%></label>
-    <br>
+    </div>
   <% end %>
-
+  </div>
+  </div>
 
   </div>
   </div>
