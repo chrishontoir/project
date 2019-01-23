@@ -131,13 +131,6 @@ class Deck
     end
   end
 
-  #    cards_not_in_hand_not_played_count > 0
-  #     while cards_in_hand_count < 5
-  #       cards_not_in_hand_not_played.first.change_hand
-  #       cards_not_in_hand_not_played.first.update
-  #     end
-  #   end
-  # end
 
   def delete()
     sql = "DELETE FROM decks WHERE id = $1"

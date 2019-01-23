@@ -13,6 +13,8 @@
               <label for="player1-id" <% if player.full_decks_count == 0 %> disabled <% end %>><%=player.name%></label>
               <br>
             </div>
+
+            <input type="hidden" name="player1_deck" value="<%=@decks[0].id%>">
           <% end %>
         </div>
       </div>
@@ -34,6 +36,8 @@
     <input type="radio" id="player2-id" name="player2_id" value="<%=player.id%>" <% if player.full_decks_count == 0 %> disabled <% end %> required>
     <label for="player2-id" <% if player.full_decks_count == 0 %> disabled <% end %>><%=player.name%></label>
     </div>
+
+    <input type="hidden" name="player2_deck" value="<%=@decks[0].id%>">
   <% end %>
   </div>
   </div>
@@ -43,13 +47,13 @@
 
   <input type="hidden" name="player1_health" value="30">
   <input type="hidden" name="player1_power" value="1">
-  <input type="hidden" name="player1_deck" value="1">
+  <!-- <input type="hidden" name="player1_deck" value="1"> -->
   <input type="hidden" name="player1_hand" value="">
   <input type="hidden" name="player1_played" value="0">
 
   <input type="hidden" name="player2_health" value="30">
   <input type="hidden" name="player2_power" value="1">
-  <input type="hidden" name="player2_deck" value="1">
+  <!-- <input type="hidden" name="player2_deck" value="1"> -->
   <input type="hidden" name="player2_hand" value="">
   <input type="hidden" name="player2_played" value="0">
 

@@ -853,6 +853,10 @@ td a:hover {
   color: #8df70f
 }
 
+td a span:hover {
+  color: red;
+}
+
 table {
   width: 76%;
   margin: 0 auto;

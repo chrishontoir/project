@@ -15,7 +15,7 @@ player1.save()
 
 player2 = Player.new({
   "name" => "Bob",
-  "avatar" => "/images/user.png",
+  "avatar" => "/images/runic_chant.png",
   "admin" => 0
 })
 player2.save()
@@ -80,23 +80,27 @@ card24.save()
 
 
 
-
+# deck0 = Deck.new({
+#   "name" => "Admin Deck",
+#   "player_id" => player1.id
+#   })
+# deck0.save()
 
 
 deck1 = Deck.new({
-  "name" => "Default Deck",
+  "name" => "Random Deck",
   "player_id" => player1.id
 })
 deck1.save()
 
 deck2 = Deck.new({
-  "name" => "Magic Focused Deck",
+  "name" => "Magic Deck",
   "player_id" => player1.id
 })
 deck2.save()
 
 deck3 = Deck.new({
-  "name" => "Spear Focused Deck",
+  "name" => "Heal Focused Deck",
   "player_id" => player3.id
 })
 deck3.save()
