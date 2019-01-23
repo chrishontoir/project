@@ -3,7 +3,7 @@
 <form action="/players/<%=@player.id%>" method="post">
   <div class="new_player_content">
     <label for="deck-name">Name: </label>
-    <input type="text" id="deck-name" name="name" value="" autofocus="autofocus" required>
+    <input type="text" id="deck-name" name="name" value="" autofocus="autofocus" required autocomplete="off">
 
     <input type="hidden" id="player-id" name="player_id" value="<%=@player.id%>">
 

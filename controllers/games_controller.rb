@@ -90,13 +90,14 @@ put '/games/:id' do
     end
   end
 
-  if @editted_game.player1_health <= 0
-     redirect to("/games/over/#{params[:player2_id]}")
-   elsif @editted_game.player2_health <= 0
-     redirect to("/games/over/#{params[:player1_id]}")
-   else
-    redirect to("/games/#{params[:id]}")
-   end
+  # if @editted_game.player1_health <= 0
+  #    redirect to("/games/over/#{params[:player2_id]}")
+  #  elsif @editted_game.player2_health <= 0
+  #    redirect to("/games/over/#{params[:player1_id]}")
+  #  else
+  #   redirect to("/games/#{params[:id]}")
+  #  end
+  redirect to("/games/#{params[:id]}")
 end
 
 get '/games/:id' do
