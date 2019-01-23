@@ -4,10 +4,10 @@
     <div class="select_p1">
       <div class="select_p1_title">
         <p>Player 1<p>
-      </div>
-      <div class="display_p1">
-        <div class="scrollable">
-          <% for player in @players %>
+        </div>
+        <div class="display_p1">
+          <div class="scrollable">
+            <% for player in @players %>
             <div class="display_players_list">
               <input type="radio" id="player1-id" name="player1_id" value="<%=player.id%>" <% if player.full_decks_count == 0 %> disabled <% end %> required>
               <label for="player1-id" <% if player.full_decks_count == 0 %> disabled <% end %>><%=player.name%></label>
@@ -15,53 +15,53 @@
             </div>
 
             <input type="hidden" name="player1_deck" value="<%=@decks[0].id%>">
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
 
-  <div class="select_vs">
-    <p>vs</p>
-  </div>
+      <div class="select_vs">
+        <p>vs</p>
+      </div>
 
-  <div class="select_p2">
-    <div class="select_p2_title">
-      <p>Player 2<p>
-    </div>
+      <div class="select_p2">
+        <div class="select_p2_title">
+          <p>Player 2<p>
+          </div>
 
-  <div class="display_p1">
-  <div class="scrollable">
-  <% for player in @players %>
-    <div class="display_players_list">
-    <input type="radio" id="player2-id" name="player2_id" value="<%=player.id%>" <% if player.full_decks_count == 0 %> disabled <% end %> required>
-    <label for="player2-id" <% if player.full_decks_count == 0 %> disabled <% end %>><%=player.name%></label>
-    </div>
+          <div class="display_p1">
+            <div class="scrollable">
+              <% for player in @players %>
+              <div class="display_players_list">
+                <input type="radio" id="player2-id" name="player2_id" value="<%=player.id%>" <% if player.full_decks_count == 0 %> disabled <% end %> required>
+                <label for="player2-id" <% if player.full_decks_count == 0 %> disabled <% end %>><%=player.name%></label>
+              </div>
 
-    <input type="hidden" name="player2_deck" value="<%=@decks[0].id%>">
-  <% end %>
-  </div>
-  </div>
+              <input type="hidden" name="player2_deck" value="<%=@decks[0].id%>">
+              <% end %>
+            </div>
+          </div>
 
-  </div>
-  </div>
+        </div>
+      </div>
+      
+      <input type="hidden" name="player1_health" value="30">
+      <input type="hidden" name="player1_power" value="1">
+      <!-- <input type="hidden" name="player1_deck" value="1"> -->
+      <input type="hidden" name="player1_hand" value="">
+      <input type="hidden" name="player1_played" value="0">
 
-  <input type="hidden" name="player1_health" value="30">
-  <input type="hidden" name="player1_power" value="1">
-  <!-- <input type="hidden" name="player1_deck" value="1"> -->
-  <input type="hidden" name="player1_hand" value="">
-  <input type="hidden" name="player1_played" value="0">
+      <input type="hidden" name="player2_health" value="30">
+      <input type="hidden" name="player2_power" value="1">
+      <!-- <input type="hidden" name="player2_deck" value="1"> -->
+      <input type="hidden" name="player2_hand" value="">
+      <input type="hidden" name="player2_played" value="0">
 
-  <input type="hidden" name="player2_health" value="30">
-  <input type="hidden" name="player2_power" value="1">
-  <!-- <input type="hidden" name="player2_deck" value="1"> -->
-  <input type="hidden" name="player2_hand" value="">
-  <input type="hidden" name="player2_played" value="0">
+      <input type="hidden" name="status" value="0">
 
-  <input type="hidden" name="status" value="0">
+      <input type="hidden" name="date" value="">
 
-  <input type="hidden" name="date" value="">
-
-  <% if @number >= 2 %>
-  <input type="submit" value="Start Game">
-  <% end %>
-</form>
+      <% if @number >= 2 %>
+      <input type="submit" value="Start Game">
+      <% end %>
+    </form>

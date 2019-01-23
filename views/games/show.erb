@@ -5,55 +5,55 @@
     <div class="select_p1">
       <div class="select_p1_title">
         <p><%=@player1.name%><p>
-      </div>
-      <div class="display_p1">
-        <div class="scrollable">
+        </div>
+        <div class="display_p1">
+          <div class="scrollable">
 
-          <% for deck in @player1.full_decks %>
+            <% for deck in @player1.full_decks %>
             <div class="display_players_list">
               <input type="radio" id="player1-deck" name="player1_deck" value="<%=deck.id%>" required >
               <label for="player1-deck"><%=deck.name%></label>
               <br>
             </div>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="select_vs">
-      <p>vs</p>
-    </div>
-
-    <div class="select_p2">
-      <div class="select_p2_title">
-        <p><%=@player2.name%><p>
+      <div class="select_vs">
+        <p>vs</p>
       </div>
 
-      <div class="display_p1">
-        <div class="scrollable">
-          <% for deck in @player2.full_decks %>
-            <div class="display_players_list">
-              <input type="radio" id="player2-deck" name="player2_deck" value="<%=deck.id%>" required >
-              <label for="player2-deck"><%=deck.name%></label>
-              <br>
+      <div class="select_p2">
+        <div class="select_p2_title">
+          <p><%=@player2.name%><p>
+          </div>
+
+          <div class="display_p1">
+            <div class="scrollable">
+              <% for deck in @player2.full_decks %>
+              <div class="display_players_list">
+                <input type="radio" id="player2-deck" name="player2_deck" value="<%=deck.id%>" required >
+                <label for="player2-deck"><%=deck.name%></label>
+                <br>
+              </div>
+              <% end %>
             </div>
-          <% end %>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <input type="hidden" name="player1_health" value="<%=@game.player1_health%>">
-  <input type="hidden" name="player1_power" value="<%=@game.player1_power%>">
-  <input type="hidden" name="player1_hand" value="<%=@game.player1_hand%>">
-  <input type="hidden" name="player1_played" value="<%=@game.player1_played%>">
+      <input type="hidden" name="player1_health" value="<%=@game.player1_health%>">
+      <input type="hidden" name="player1_power" value="<%=@game.player1_power%>">
+      <input type="hidden" name="player1_hand" value="<%=@game.player1_hand%>">
+      <input type="hidden" name="player1_played" value="<%=@game.player1_played%>">
 
-  <input type="hidden" name="player2_health" value="<%=@game.player2_health%>">
-  <input type="hidden" name="player2_power" value="<%=@game.player2_power%>">
-  <input type="hidden" name="player2_hand" value="<%=@game.player2_hand%>">
-  <input type="hidden" name="player2_played" value="<%=@game.player2_played%>">
+      <input type="hidden" name="player2_health" value="<%=@game.player2_health%>">
+      <input type="hidden" name="player2_power" value="<%=@game.player2_power%>">
+      <input type="hidden" name="player2_hand" value="<%=@game.player2_hand%>">
+      <input type="hidden" name="player2_played" value="<%=@game.player2_played%>">
 
-  <input type="hidden" name="status" value="<%=@game.status%>">
-  <input type="hidden" name="date" value="<%=@game.date%>">
+      <input type="hidden" name="status" value="<%=@game.status%>">
+      <input type="hidden" name="date" value="<%=@game.date%>">
 
-  <input type='submit' value="Select Decks">
-</form>
+      <input type='submit' value="Select Decks">
+    </form>

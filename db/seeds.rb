@@ -79,14 +79,6 @@ card24 = Card.new({"name" => "Inspiration","description" => "Strong heal","damag
 card24.save()
 
 
-
-# deck0 = Deck.new({
-#   "name" => "Admin Deck",
-#   "player_id" => player1.id
-#   })
-# deck0.save()
-
-
 deck1 = Deck.new({
   "name" => "Random Deck",
   "player_id" => player1.id

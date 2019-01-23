@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Card Wars</title>
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Spinnaker" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <title>Card Wars</title>
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Spinnaker" rel="stylesheet">
 
-    <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/style.css">
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <a href="/players/new"><li>New Player</li></a>
-          <a href="/"><li class="logo"><h1>Card Wars</h1></li></a>
-          <a href="/games/new"><li>New Game</li></a>
-        </ul>
-      </nav>
-    </header>
-    <section class="content">
-      <%=yield%>
-    </section>
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <a href="/players/new"><li>New Player</li></a>
+        <a href="/"><li class="logo"><h1>Card Wars</h1></li></a>
+        <a href="/games/new"><li>New Game</li></a>
+      </ul>
+    </nav>
+  </header>
+  <section class="content">
+    <%=yield%>
+  </section>
 
-  </body>
+</body>
 </html>

@@ -1,10 +1,10 @@
 <div class="welcome_text">
   <% if @game.status == @game.player1_id %>
-    <p>WINNER: <%=@player1.name%></p>
+  <p>WINNER: <%=@player1.name%></p>
   <% elsif @game.status == @game.player2_id %>
-    <p>WINNER: <%=@player2.name%></p>
+  <p>WINNER: <%=@player2.name%></p>
   <% elsif @game.status == 0 %>
-    <p>DRAW</p>
+  <p>DRAW</p>
   <% end %>
 </div>
 

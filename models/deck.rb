@@ -131,7 +131,6 @@ class Deck
     end
   end
 
-
   def delete()
     sql = "DELETE FROM decks WHERE id = $1"
     values = [@id]
