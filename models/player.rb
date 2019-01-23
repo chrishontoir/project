@@ -20,8 +20,14 @@ class Player
     @id = player['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE players SET (name, avatar, admin) = ($1, $2, $3) WHERE id = $4"
+    values = [@name, @avatar, @admin, @id]
+    SqlRunner.run(sql,values)
+  end
+
   def self.all()
-    sql = "SELECT * FROM players"
+    sql = "SELECT * FROM players ORDER BY id ASC"
     players = SqlRunner.run(sql)
     return players.map {|player| Player.new(player)}
   end

@@ -1,0 +1,16 @@
+<div class="add_card_deck_name"><p>Edit Profile</p></div>
+
+<form action="/players/<%=@player.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <div class="new_player_content">
+    <label for="player-name">Name: </label>
+    <input type="text" id="player-name" name="name" value="<%=@player.name%>" required maxlength="10">
+
+    <label for="player-avatar">Avatar: </label>
+    <input type="text" id="player-avatar" name="avatar" value="<%=@player.avatar%>" placeholder="URL or FILE PATH">
+    <input type="hidden" name="admin" value="0">
+
+  </div>
+
+  <input type="submit" name="" value="Update">
+</form>

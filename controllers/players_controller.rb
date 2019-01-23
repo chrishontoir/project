@@ -48,6 +48,19 @@ post '/players/:id' do
   redirect to("/decks/#{deck.id}")
 end
 
+get '/players/:id/edit' do
+  @player = Player.find(params['id'].to_i)
+  erb(:"players/update")
+end
+
+put '/players/:id' do
+  @editted_player = Player.find(params[:id])
+  @editted_player.name = params[:name]
+  @editted_player.avatar = params[:avatar]
+  @editted_player.update()
+  redirect to("/players")
+end
+
 get '/players/:id/delete' do
   @player = Player.find(params['id'].to_i)
   @player.delete
