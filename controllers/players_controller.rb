@@ -47,3 +47,9 @@ post '/players/:id' do
   deck.save
   redirect to("/decks/#{deck.id}")
 end
+
+get '/players/:id/delete' do
+  @player = Player.find(params['id'].to_i)
+  @player.delete
+  redirect to("/players")
+end

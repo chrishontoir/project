@@ -73,6 +73,12 @@ class Player
     return number
   end
 
+  def delete
+    sql = "DELETE FROM players WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql,values)
+  end
+
 
 
 

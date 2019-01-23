@@ -78,15 +78,15 @@ put '/games/:id' do
     if @editted_game.player1_health > @editted_game.player2_health
       @editted_game.status = @editted_game.player1_id
       @editted_game.update()
-      redirect to("/games/over/#{params[:player1_id]}")
+      redirect to("/games/#{params[:id]}/over")
     elsif @editted_game.player2_health > @editted_game.player1_health
       @editted_game.status = @editted_game.player2_id
       @editted_game.update()
-      redirect to("/games/over/#{params[:player2_id]}")
+      redirect to("/games/#{params[:id]}/over")
     else
-      @editted_game.status = 111111
+      @editted_game.status = 0
       @editted_game.update()
-      redirect to("/games/over/#{params[:player2_id]}/draw")
+      redirect to("/games/#{params[:id]}/over")
     end
   end
 
@@ -125,7 +125,9 @@ get '/games/:id' do
   erb(:"games/play")
 end
 
-get '/games/over/:id' do
-  @winner = Player.find(params[:id])
+get '/games/:id/over' do
+  @game = Game.find(params[:id])
+  @player1 = Player.find(@game.player1_id)
+  @player2 = Player.find(@game.player2_id)
   erb(:"games/over")
 end

@@ -1,25 +1,22 @@
 
 <form action="/games" method="post">
   <div class="select_players_content">
-
-
-  <div class="select_p1">
-    <div class="select_p1_title">
-      <p>Player 1<p>
+    <div class="select_p1">
+      <div class="select_p1_title">
+        <p>Player 1<p>
+      </div>
+      <div class="display_p1">
+        <div class="scrollable">
+          <% for player in @players %>
+            <div class="display_players_list">
+              <input type="radio" id="player1-id" name="player1_id" value="<%=player.id%>" <% if player.full_decks_count == 0 %> disabled <% end %> required>
+              <label for="player1-id" <% if player.full_decks_count == 0 %> disabled <% end %>><%=player.name%></label>
+              <br>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <div class="display_p1">
-  <div class="scrollable">
-  <% for player in @players %>
-    <div class="display_players_list">
-    <input type="radio" id="player1-id" name="player1_id" value="<%=player.id%>" <% if player.full_decks_count == 0 %> disabled <% end %> required>
-    <label for="player1-id" <% if player.full_decks_count == 0 %> disabled <% end %>><%=player.name%></label>
-    <br>
-    </div>
-  <% end %>
-  </div>
-  </div>
-
-  </div>
 
   <div class="select_vs">
     <p>vs</p>
@@ -64,5 +61,3 @@
   <input type="submit" value="Start Game">
   <% end %>
 </form>
-
-<p><a href="/">Back</a></p>

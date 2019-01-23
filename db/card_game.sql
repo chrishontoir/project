@@ -25,13 +25,13 @@ CREATE TABLE cards (
 CREATE TABLE decks (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
-  player_id INT4 REFERENCES players(id)
+  player_id INT4 REFERENCES players(id) ON DELETE CASCADE
 );
 
 CREATE TABLE cards_decks (
   id SERIAL8 PRIMARY KEY,
-  card_id INT4 REFERENCES cards(id),
-  deck_id INT4 REFERENCES decks(id),
+  card_id INT4 REFERENCES cards(id) ON DELETE CASCADE,
+  deck_id INT4 REFERENCES decks(id) ON DELETE CASCADE,
   in_hand BOOLEAN,
   played BOOLEAN,
   order_num INT8
@@ -40,16 +40,16 @@ CREATE TABLE cards_decks (
 CREATE TABLE games (
   id SERIAL8 PRIMARY KEY,
   date VARCHAR(255),
-  player1_id INT4 REFERENCES players(id),
+  player1_id INT4 REFERENCES players(id) ON DELETE CASCADE,
   player1_health INT4,
   player1_power INT4,
-  player1_deck INT4 REFERENCES decks(id),
+  player1_deck INT4 REFERENCES decks(id) ON DELETE CASCADE,
   player1_hand VARCHAR(255),
   player1_played VARCHAR(255),
-  player2_id INT4 REFERENCES players(id),
+  player2_id INT4 REFERENCES players(id) ON DELETE CASCADE,
   player2_health INT4,
   player2_power INT4,
-  player2_deck INT4 REFERENCES decks(id),
+  player2_deck INT4 REFERENCES decks(id) ON DELETE CASCADE,
   player2_hand VARCHAR(255),
   player2_played VARCHAR(255),
   status VARCHAR(255)

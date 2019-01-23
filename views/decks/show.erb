@@ -17,8 +17,9 @@
   </ul>
 </div>
 
+<div class="select">
 <% if @deck.card_count < 10 %>
-<p><a href="/decks/<%=@deck.id%>/add">Add Card</a></p>
+<a href="/decks/<%=@deck.id%>/add">Add Card</a>
 <% end %>
 
-<div class="select"><a href="/players/<%=@deck.player_id%>">Back</a></div>
+<a href="/players/<%=@deck.player_id%>">Back</a></div>

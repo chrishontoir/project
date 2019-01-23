@@ -41,3 +41,10 @@ post '/decks/:id/add' do
   card_deck.save()
   redirect to("decks/#{params[:id]}")
 end
+
+get '/decks/:id/delete'do
+  @deck = Deck.find(params['id'].to_i)
+  player = @deck.player_id
+  @deck.delete()
+  redirect to("players/#{player}")
+end

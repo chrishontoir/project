@@ -1,25 +1,54 @@
-<h1>VIEW PROFILE</h1>
+<div class="player_1_details">
+  <div class="p1_name_details"><img src="<%=@player.avatar%>" alt=""><%=@player.name%></div>
+</div>
 
-<p>Name: <%=@player.name%></p>
-<p>Decks:</p>
-<ul>
-<% for deck in @player.decks %>
-<li><a href="/decks/<%=deck.id%>"><%=deck.name%></a></li>
-<% end %>
-</ul>
+<div class="player_deck_content">
+  <p>Decks</p>
+  <table>
+    <% for deck in @player.decks %>
+    <tr>
+      <td><%=deck.name%></td>
+      <td><a href='/decks/<%=deck.id%>'>View</a></td>
+      <td><a href="/decks/<%=deck.id%>/delete">Delete</a></td>
+    </tr>
+    <% end %>
+    </table>
+  </div>
+
+  <div class="player_games_content">
+    <p>Games Played</p>
+    <table>
 
 
-<p><a href="/decks/new/<%=@player.id%>">New Deck</a></p>
+      <% for game in @player.games %>
+      <% if game.player1_id == @player.id %>
+      <% opponent_id = game.player2_id %>
+      <% else %>
+      <% opponent_id = game.player1_id %>
+      <% end %>
+      <% opponent = Player.find(opponent_id) %>
+      <% if @player.id == game.status.to_i %>
+      <tr>
+        <td><%=game.date%></td>
+        <td><%=opponent.name%></td>
+        <td>Win</td>
+      </tr>
+      <% elsif game.status.to_i == 0 %>
+      <tr>
+        <td><%=game.date%></td>
+        <td><%=opponent.name%></td>
+        <td>Draw</td>
+      </tr>
+      <% else %>
+      <tr>
+        <td><%=game.date%></td>
+        <td><%=opponent.name%></td>
+        <td>Loss</td>
+      </tr>
+      <% end %>
+      <% end %>
+    </table>
 
-<p>Games:</p>
-<ul>
-<% for game in @player.games %>
-<% if @player.id == game.status.to_i %>
-  <li><a href="/games/<%=game.id%>"><%=game.date%></a> | Win</li>
-<% else %>
-  <li><a href="/games/<%=game.id%>"><%=game.date%></a> | Loss</li>
-<% end %>
-<% end %>
-</ul>
+  </div>
 
-<p><a href="/players">Back</a></p>
+  <div class="select"><a href="/decks/new/<%=@player.id%>">New Deck</a><a href="/players">Back</a></div>

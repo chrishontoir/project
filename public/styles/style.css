@@ -542,6 +542,7 @@ input[type=submit]:hover {
 .select {
   background-color: none;
   width: 100%;
+  margin: 20px 0;
 }
 
 .select > a {
@@ -624,6 +625,10 @@ input[type=submit]:hover {
 
 .player_template a:hover {
   color:#8df70f;
+}
+
+.player_template a span:hover {
+  color: red;
 }
 
 .player_template_name {
@@ -770,7 +775,7 @@ input[type=submit]:hover {
   line-height: 60px;
   margin: 5px 0;
   background-color: rgba(0,0,0,0.4);
-  box-shadow: 0 0 5px black;
+  border: 2px solid white;
   text-align: left;
   color: white;
   text-shadow: 0 0 5px black;
@@ -781,4 +786,80 @@ input[type=submit]:hover {
   background-color: rgba(255,255,255,0.8);
   color: black;
   text-shadow: 0 0 5px white;
+}
+
+.display_players_list input {
+  margin-left: 20px;
+  transform:scale(1.5);
+  position: relative;
+  bottom: 1px;
+}
+
+.display_players_list label {
+  margin-left: 10px;
+}
+
+.player_deck_content {
+  background-color: none;
+  width: 45%;
+  display: inline-block;
+}
+
+.player_deck_content p {
+  font-size: 20px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  margin-bottom: 10px;
+}
+
+.player_games_content {
+  background-color: none;
+  width: 45%;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+/* .player_games_content table {
+  background-color: none;
+  width: 100%;
+} */
+
+.player_games_content p {
+  font-size: 20px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  margin-bottom: 10px;
+}
+
+td {
+  text-align: center;
+  background-color: rgba(0,0,0,0.4);
+  height: 30px;
+  vertical-align: middle;
+  border: 1px solid white;
+  font-size: 14px;
+}
+
+td:nth-child(1) {
+  width: 50%;
+}
+
+td a {
+  text-decoration: none;
+  color: white;
+}
+
+td a:hover {
+  color: #8df70f
+}
+
+table {
+  width: 76%;
+  margin: 0 auto;
+  color: white;
+  text-shadow: 0 0 5px black;
+}
+
+tr:hover {
+  background-color: rgba(0,0,0,0.6);
 }
