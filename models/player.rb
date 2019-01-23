@@ -85,7 +85,4 @@ class Player
     SqlRunner.run(sql,values)
   end
 
-
-
-
 end
