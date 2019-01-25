@@ -27,3 +27,22 @@
 #   foreign keys, which would be used as the data pulled to each player's profile game history. This would mean
 #   that a player's games wouldn't be deleted from their Game history if the other player in that game deletes
 #   their profile.
+
+
+# Requirements
+# Ruby
+# Sinatra
+# PostGres
+# MiniTest
+
+# Setup
+# Download and extract the files.
+# Run 'psql -d card_game -f db/card_game.sql'.
+# Run 'ruby db/seeds.rb'.
+# Run 'ruby app.rb'.
+# Type 'localhost:4567' into the URL.
+
+# Tests
+# There are a number of tests already written in the models/specs folder.
+# To run the tests, type 'ruby models/specs/' followed by the name of the test folder found in models/specs that you wish to run, e.g.
+# ruby models/specs/game_spec.rb'
